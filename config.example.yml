@@ -1,0 +1,35 @@
+llm:
+  provider: openai
+  model: gpt-4o-mini
+  api_key: ${OPENAI_API_KEY}
+  temperature: 0.7
+  max_tokens: 1000
+  system_prompt: "You are a helpful assistant."
+
+platforms:
+  telegram:
+    enabled: true
+    token: ${TELEGRAM_TOKEN}
+  discord:
+    enabled: false
+    token: ${DISCORD_TOKEN}
+    options:
+      command_prefix: "!"
+  slack:
+    enabled: false
+    token: ${SLACK_BOT_TOKEN}
+    options:
+      app_token: ${SLACK_APP_TOKEN}
+  whatsapp:
+    enabled: false
+    token: ${WHATSAPP_ACCESS_TOKEN}
+    options:
+      phone_number_id: ${WHATSAPP_PHONE_ID}
+
+session:
+  max_history: 50
+  ttl_seconds: 3600
+  persist: false
+  storage_path: ./sessions
+
+log_level: INFO
