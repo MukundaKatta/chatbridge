@@ -1,48 +1,43 @@
-# ChatBridge
+# chatbridge
 
-Connect any LLM to any messaging platform with a unified message routing architecture.
+**Agentic IM chatbot infrastructure — integrates WhatsApp, Telegram, Discord, Slack with any LLM**
 
-## Features
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
-- **Platform Adapters**: Telegram, Discord, Slack, WhatsApp
-- **LLM Providers**: OpenAI/GPT, Anthropic/Claude, local Ollama
-- **Session Management**: Per-user conversation history with persistence
-- **YAML Configuration**: Simple config file for all settings
-- **Middleware Support**: Custom message processing pipeline
-- **Multi-platform**: Run one bot across all platforms simultaneously
-
-## Quick Start
-
-```python
-from chatbridge.bridge import ChatBridge
-from chatbridge.platforms.telegram import TelegramAdapter
-from chatbridge.llm.openai_provider import OpenAIProvider
-
-bridge = ChatBridge()
-bridge.register_platform("telegram", TelegramAdapter(token="YOUR_TOKEN"))
-bridge.set_llm_provider(OpenAIProvider(api_key="YOUR_KEY"))
-
-import asyncio
-asyncio.run(bridge.start())
-```
-
-## Configuration
-
-Copy `config.example.yml` to `config.yml` and fill in your credentials.
-
-## Installation
-
-```bash
-pip install -e ".[all]"
-```
-
-## Testing
-
+## Install
 ```bash
 pip install -e ".[dev]"
-pytest tests/
+```
+
+## Quick Start
+```python
+from src.core import Chatbridge
+ instance = Chatbridge()
+r = instance.connect_platform(input="test")
+```
+
+## CLI
+```bash
+python -m src status
+python -m src run --input "data"
+```
+
+## API
+| Method | Description |
+|--------|-------------|
+| `connect_platform()` | Connect platform |
+| `route_message()` | Route message |
+| `manage_session()` | Manage session |
+| `switch_llm()` | Switch llm |
+| `get_history()` | Get history |
+| `disconnect()` | Disconnect |
+| `get_stats()` | Get stats |
+| `reset()` | Reset |
+
+## Test
+```bash
+pytest tests/ -v
 ```
 
 ## License
-
-© 2026 Officethree Technologies. All Rights Reserved.
+(c) 2026 Officethree Technologies. All Rights Reserved.
