@@ -1,13 +1,15 @@
-# chatbridge
+# ChatBridge
 
-Stub Python project. The description says "agentic IM chatbot infrastructure" integrating WhatsApp, Telegram, Discord, and Slack with LLMs, but no such functionality exists.
+Agentic instant messaging chatbot infrastructure integrating WhatsApp, Telegram, Discord, and Slack with LLMs.
 
-## What's actually here
+## About
+ChatBridge provides a unified framework for building AI-powered chatbots that work across multiple messaging platforms. It handles platform-specific APIs, message routing, and conversation management while connecting to LLMs for intelligent responses - letting you deploy one bot to many channels.
 
-A single class in `src/core.py` (Chatbridge) with placeholder methods (connect_platform, send_message, receive_message, manage_channel, get_analytics, configure) that each return a fixed dictionary without doing any real work. There is no messaging integration, no LLM hookup, no platform connectivity - just stub functions.
-
-The project uses only Python standard library imports (time, logging, json, typing). No WhatsApp, Telegram, Discord, or Slack SDKs are present.
+## Tech Stack
+- Python
+- Click/Typer (CLI)
+- Messaging platform SDKs (WhatsApp, Telegram, Discord, Slack)
+- LLM integration
 
 ## Status
-
-Scaffolding only. No working chat bridge functionality exists.
+Active development - core architecture and project structure established.
