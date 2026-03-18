@@ -1,43 +1,13 @@
 # chatbridge
 
-**Agentic IM chatbot infrastructure — integrates WhatsApp, Telegram, Discord, Slack with any LLM**
+Stub Python project. The description says "agentic IM chatbot infrastructure" integrating WhatsApp, Telegram, Discord, and Slack with LLMs, but no such functionality exists.
 
-![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
+## What's actually here
 
-## Install
-```bash
-pip install -e ".[dev]"
-```
+A single class in `src/core.py` (Chatbridge) with placeholder methods (connect_platform, send_message, receive_message, manage_channel, get_analytics, configure) that each return a fixed dictionary without doing any real work. There is no messaging integration, no LLM hookup, no platform connectivity - just stub functions.
 
-## Quick Start
-```python
-from src.core import Chatbridge
- instance = Chatbridge()
-r = instance.connect_platform(input="test")
-```
+The project uses only Python standard library imports (time, logging, json, typing). No WhatsApp, Telegram, Discord, or Slack SDKs are present.
 
-## CLI
-```bash
-python -m src status
-python -m src run --input "data"
-```
+## Status
 
-## API
-| Method | Description |
-|--------|-------------|
-| `connect_platform()` | Connect platform |
-| `route_message()` | Route message |
-| `manage_session()` | Manage session |
-| `switch_llm()` | Switch llm |
-| `get_history()` | Get history |
-| `disconnect()` | Disconnect |
-| `get_stats()` | Get stats |
-| `reset()` | Reset |
-
-## Test
-```bash
-pytest tests/ -v
-```
-
-## License
-(c) 2026 Officethree Technologies. All Rights Reserved.
+Scaffolding only. No working chat bridge functionality exists.
